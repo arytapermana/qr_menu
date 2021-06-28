@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dasboard</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../assets/css/main.css">
+        <link rel="stylesheet" href="../../assets/css/custom-skin.css">
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="d-flex flex-column flex-shrink-0 p-3 sidebar-light">
+                    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                        <span class="mr-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55" height="54" viewBox="0 0 55 54">
+                                <defs>
+                                    <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 215 212">
+                                    <image width="215" height="212" xlink:href="data:image/png;base64,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"/>
+                                    </pattern>
+                                </defs>
+                                <rect id="Component_6_1" data-name="Component 6 – 1" width="55" height="54" fill="url(#pattern)"/>
+                            </svg>
+                        </span>
+                        <span class="logo-text"><strong>RESTO X</strong></span>
+                    </a>
+                    <hr>
+                    <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active" aria-current="page">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+                        Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link link-dark">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+                        Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link link-dark">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+                        Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link link-dark">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+                        Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link link-dark">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+                        Customers
+                        </a>
+                    </li>
+                    </ul>
+                    <hr>
+                    <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                        <strong>mdo</strong>
+                    </a>
+                    <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js" ></script>
+        <script src="" async defer></script>
+    </body>
+</html>
