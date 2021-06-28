@@ -1,0 +1,11 @@
+:root {
+    --myblack: #404040;
+}
+
+.my-bg-black,a.my-bg-black,button.btn.my-bg-black,button.my-bg-black{
+    background: var(--myblack) !important;
+}
+
+.my-color-black{
+    color: var(--myblack) !important;
+}
