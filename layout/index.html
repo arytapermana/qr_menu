@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
         <link rel="stylesheet" href="../assets/css/main.css">
         <link rel="stylesheet" href="../assets/css/custom-skin.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        
     </head>
     <body>
         
@@ -41,17 +48,17 @@
             </ul>
             <div class="d-flex navbar-nav">
                 <div class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="../layout/login.html">Login</a>
                 </div>
             </div>
         </div>
         </nav>
 
         <!-- Banner Upper -->
-        <div id="banner-upper">
+        <div id="banner-upper" class="margin-default">
             <div class="container-fluid py-5">
                 <div class="row">
-                    <div class="col-3">
+                    <div id="banner-text" class="col-auto">
                         <div class="qr-title">
                             <h4>New Normal Solution</h4>
                             <p>Buku Menu QR merupakan solusi mudah untuk membuat buku menu resto anda dengan sangat interaktif.</p>
@@ -73,7 +80,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-9">
+                    <div class="col">
                         <div id="banner-map">
                             <div id="banner-image">
                                 <img src="../assets/image/banner-vector.jpg" alt="Resto X">
@@ -84,6 +91,287 @@
             </div>
         </div>
 
-        <script src="../assets/bootstrap/js/bootstrap.min.js" ></script>
+        <!-- Second Slide -->
+        <div id="second-slide" class="margin-default">
+            <div class="container-fluid pt-5">
+                <div class="row">
+                    <div class="col-md-7 col-12">
+                        <div class="qr-title">
+                            <h4 class="default-title">Solusi kami adalah pengalaman customer anda</h4>
+                        </div>
+                        <div id="solusi-kami-column" class="row">
+                            <div class="col-md-4 col-12">
+                                <div class="p-2 bd-highlight">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="85.583" height="85.583" viewBox="0 0 85.583 85.583">
+                                        <g id="Icon_feather-loader" data-name="Icon feather-loader" transform="translate(-0.5 -0.5)">
+                                          <path id="Path_16" data-name="Path 16" d="M18,3V19.117" transform="translate(25.291 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+                                          <path id="Path_17" data-name="Path 17" d="M18,27V43.117" transform="translate(25.291 40.466)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+                                          <path id="Path_18" data-name="Path 18" d="M7.4,7.4,18.8,18.8" transform="translate(7.41 7.41)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+                                          <path id="Path_19" data-name="Path 19" d="M24.36,24.36l11.4,11.4" transform="translate(36.015 36.015)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+                                          <path id="Path_20" data-name="Path 20" d="M3,18H19.117" transform="translate(0 25.291)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+                                          <path id="Path_21" data-name="Path 21" d="M27,18H43.117" transform="translate(40.466 25.291)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+                                          <path id="Path_22" data-name="Path 22" d="M7.4,35.762l11.4-11.4" transform="translate(7.41 36.015)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+                                          <path id="Path_23" data-name="Path 23" d="M24.36,18.8l11.4-11.4" transform="translate(36.015 7.41)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+                                        </g>
+                                    </svg>                                      
+                                </div>
+                                <div class="p-2 bd-highlight text-center">
+                                    <h5>Kami sering pusing menunggu</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="p-2 bd-highlight">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="75.108" height="63.377" viewBox="0 0 75.108 63.377">
+                                        <path id="Icon_awesome-tasks" data-name="Icon awesome-tasks" d="M20.48,2.766a1.76,1.76,0,0,0-2.494,0L8.645,12.053,5.315,8.808a1.76,1.76,0,0,0-2.494,0l-2.3,2.306a1.76,1.76,0,0,0,0,2.494L7.5,20.561a1.875,1.875,0,0,0,2.583,0l2.287-2.291L22.961,7.68a1.774,1.774,0,0,0,.013-2.494Zm0,23.353a1.76,1.76,0,0,0-2.494,0L8.645,35.466l-3.33-3.242a1.76,1.76,0,0,0-2.494,0l-2.3,2.3a1.76,1.76,0,0,0,0,2.494l6.964,6.968a1.873,1.873,0,0,0,2.582,0l2.3-2.3L22.958,31.091a1.76,1.76,0,0,0,.013-2.479ZM9.389,51.542a7.042,7.042,0,1,0,0,14.083,7.041,7.041,0,1,0,0-14.083Zm63.373,2.347H30.513a2.347,2.347,0,0,0-2.347,2.347v4.694a2.347,2.347,0,0,0,2.347,2.347H72.761a2.347,2.347,0,0,0,2.347-2.347V56.236A2.347,2.347,0,0,0,72.761,53.889Zm0-46.943H30.513a2.347,2.347,0,0,0-2.347,2.347v4.694a2.347,2.347,0,0,0,2.347,2.347H72.761a2.347,2.347,0,0,0,2.347-2.347V9.294A2.347,2.347,0,0,0,72.761,6.947Zm0,23.471H30.513a2.347,2.347,0,0,0-2.347,2.347v4.694a2.347,2.347,0,0,0,2.347,2.347H72.761a2.347,2.347,0,0,0,2.347-2.347V32.765A2.347,2.347,0,0,0,72.761,30.418Z" transform="translate(0 -2.248)"/>
+                                    </svg>                                      
+                                </div>
+                                <div class="p-2 bd-highlight">
+                                    <div class="align-self-center text-center">
+                                        <h5>Lupa tadi mau pesan yang mana</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="p-2 bd-highlight">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="53.985" height="71.98" viewBox="0 0 53.985 71.98">
+                                        <path id="Icon_awesome-file-pdf" data-name="Icon awesome-file-pdf" d="M25.573,36c-.7-2.249-.689-6.593-.281-6.593C26.472,29.41,26.36,34.6,25.573,36Zm-.239,6.636a64.871,64.871,0,0,1-3.993,8.815,51.768,51.768,0,0,1,8.843-3.079A18.211,18.211,0,0,1,25.334,42.64ZM12.1,60.185c0,.112,1.856-.759,4.906-5.652C16.069,55.419,12.92,57.977,12.1,60.185ZM34.865,22.494h19.12V68.606a3.366,3.366,0,0,1-3.374,3.374H3.374A3.366,3.366,0,0,1,0,68.606V3.374A3.366,3.366,0,0,1,3.374,0H31.491V19.12A3.384,3.384,0,0,0,34.865,22.494ZM33.741,46.646a14.11,14.11,0,0,1-6-7.563c.633-2.6,1.631-6.551.872-9.026-.661-4.133-5.961-3.726-6.72-.956-.7,2.573-.056,6.2,1.139,10.825a132.013,132.013,0,0,1-5.736,12.062c-.014,0-.014.014-.028.014-3.81,1.954-10.347,6.256-7.662,9.56a4.368,4.368,0,0,0,3.023,1.406c2.516,0,5.019-2.531,8.59-8.688a80.135,80.135,0,0,1,11.106-3.262,21.306,21.306,0,0,0,9,2.741c4.105,0,4.386-4.5,2.77-6.1C42.133,45.747,36.454,46.295,33.741,46.646ZM53,14.761,39.223.984A3.372,3.372,0,0,0,36.833,0H35.99V17.995H53.985v-.858A3.363,3.363,0,0,0,53,14.761ZM42.583,50.653c.576-.38-.351-1.673-6.017-1.265C41.782,51.609,42.583,50.653,42.583,50.653Z"/>
+                                      </svg>                                      
+                                </div>
+                                <div class="p-2 bd-highlight text-center">
+                                    <h5>Buka menu apa buka ebook?</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-12">
+                        <div id="info-gratis">
+                            <div class="qr-title mb-4">
+                                <h4 class="default-title">Info Gratis</h4>
+                            </div>
+                            <hr class="hr-head-border">
+                            <div class="center-flex d-flex justify-content-evenly mt-4">
+                                <div class="qr-title d-flex text-center bd-highlight flex-column">
+                                    <div class="p-2 bd-highlight">
+                                        <h4>800+</h4>
+                                    </div>
+                                    <hr class="hr-mini-border">
+                                    <div class="p-2 bd-highlight">
+                                        <h5>Menu diisi</h5>
+                                    </div>
+                                </div>
+                                <div class="qr-title d-flex text-center bd-highlight flex-column">
+                                    <div class="p-2 bd-highlight">
+                                        <h4>90+</h4>
+                                    </div>
+                                    <hr class="hr-mini-border">
+                                    <div class="p-2 bd-highlight">
+                                        <h5>Resto Kreatif</h5>
+                                    </div>
+                                </div>
+                                <div class="qr-title d-flex text-center bd-highlight flex-column">
+                                    <div class="p-2 bd-highlight">
+                                        <h4>1.000+</h4>
+                                    </div>
+                                    <hr class="hr-mini-border">
+                                    <div class="p-2 bd-highlight">
+                                        <h5>Pengguna Lapar</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third Slide -->
+        <div id="third-slide" class="margin-default pt-5">
+            <div class="container-fluid">
+                <div class="qr-title">
+                    <h4 class="default-title">3 Langkah Kreatif</h4>
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-md-4 col-12">
+                        <div class="d-flex">
+                            <div class="qr-box default-box-padding third-box text-center align-self-center">
+                                <svg class="image-center" xmlns="http://www.w3.org/2000/svg" width="76.72" height="102.294" viewBox="0 0 76.72 102.294">
+                                    <path id="Icon_awesome-pray" data-name="Icon awesome-pray" d="M51.147,25.574A12.787,12.787,0,1,0,38.36,12.787,12.786,12.786,0,0,0,51.147,25.574Zm-6.12,33.915A8,8,0,0,0,56.21,60.531L73.792,46.142A7.992,7.992,0,1,0,63.664,33.775l-11.476,9.39-7.774-9.252a14.609,14.609,0,0,0-12.787-5.061,14.36,14.36,0,0,0-11.262,7.376L10.5,54.616C5.826,63.335,8.765,73.87,17.332,79.34l8.953,6.971H7.992a7.992,7.992,0,0,0,0,15.983H49.549c6.809,0,10.743-8.549,5.65-13.642L33.25,66.7,40.2,53.743Z"/>
+                                  </svg>
+                            </div>
+                            <div class="d-flex flex-column mx-3 align-self-center">
+                                <div class="d-flex">
+                                    <h5 class="default-title">Berdoa</h5>
+                                </div>
+                                <div class="d-flex">
+                                    <p>Semoga Rejekinya dilancarkan dan usahanya lancer. Doakan juga kami sudah menyumbangkan aplikasi ini.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <div class="d-flex">
+                            <div class="qr-box default-box-padding third-box text-center align-self-center">
+                                <svg class="image-center" xmlns="http://www.w3.org/2000/svg" width="111.093" height="69.433" viewBox="0 0 111.093 69.433">
+                                    <path id="Icon_awesome-google-plus-g" data-name="Icon awesome-google-plus-g" d="M68.392,34.244a29.448,29.448,0,0,1,.568,5.778c0,19.845-13.309,33.912-33.343,33.912a34.717,34.717,0,0,1,0-69.433,33.161,33.161,0,0,1,23.255,9.094L49.446,22.64a19.493,19.493,0,0,0-13.83-5.352,21.733,21.733,0,0,0-21.5,21.929,21.733,21.733,0,0,0,21.5,21.929c13.735,0,18.9-9.9,19.7-14.967h-19.7V34.243H68.392Zm33.524,1.164V25.33H91.79V35.407H81.713V45.533H91.79V55.611h10.126V45.533h10.077V35.407H101.916Z" transform="translate(-0.9 -4.5)"/>
+                                  </svg>   
+                            </div>
+                            <div class="d-flex flex-column mx-3 align-self-center">
+                                <div class="d-flex">
+                                    <h5 class="default-title">Hanya Login Via Google</h5>
+                                </div>
+                                <div class="d-flex">
+                                    <p>Rasa malas kita mengisi form dijawab oleh google. Terima Kasih Google.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <div class="d-flex">
+                            <div class="qr-box default-box-padding third-box text-center align-self-center">
+                                <svg class="image-center" xmlns="http://www.w3.org/2000/svg" width="81.675" height="77.556" viewBox="0 0 81.675 77.556">
+                                    <path id="Icon_material-restaurant-menu" data-name="Icon material-restaurant-menu" d="M27.005,48.3,39.094,36.209,9.108,6.266a17.118,17.118,0,0,0,0,24.177Zm28.961-7.731c6.535,3.033,15.719.9,22.511-5.895,8.159-8.159,9.739-19.863,3.46-26.142C75.7,2.294,64,3.831,55.8,11.99,49,18.782,46.868,27.965,49.9,34.5L8.211,76.191l6.023,6.023L43.664,52.868,73.052,82.256l6.023-6.023L49.687,46.846Z" transform="translate(-4.11 -4.7)" fill="#363636"/>
+                                  </svg>   
+                            </div>
+                            <div class="d-flex flex-column mx-3 align-self-center">
+                                <div class="d-flex">
+                                    <h5 class="default-title">Isi Menu & Cetak QR</h5>
+                                </div>
+                                <div class="d-flex">
+                                    <p>Setelah kreativitas dituangkan dalam buku menu, silahkan share atau cetak. Mudah asalkan ada printer. Kalau tidak punya, cukup share link aja.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Drop Down -->
+        <div id="qr-drop-down" class="margin-default pt-5">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="qr-title">
+                            <h4 class="default-title">FAQ</h4>
+                        </div>
+                        <div class="box-faq qr-box">
+                            <a data-toggle="collapse" href="#collapse1">
+                                <div class="d-flex drop-down-title">
+                                    <div class="d-flex flex-grow-1">
+                                        <h5 class="default-title">Kenapa harus pakai Buku Menu QR?</h5>
+                                    </div>
+                                    <div class="d-flex align-self-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.493" height="14.527" viewBox="0 0 22.493 14.527">
+                                            <path id="Icon_awesome-angle-down" data-name="Icon awesome-angle-down" d="M10.055,24.771.492,15.209a1.681,1.681,0,0,1,0-2.384l1.589-1.589a1.681,1.681,0,0,1,2.384,0l6.778,6.778,6.778-6.778a1.681,1.681,0,0,1,2.384,0l1.589,1.589a1.681,1.681,0,0,1,0,2.384l-9.562,9.562a1.672,1.672,0,0,1-2.377,0Z" transform="translate(0.004 -10.74)"/>
+                                          </svg>                                  
+                                    </div>
+                                </div>
+                            </a>
+                            <div id="collapse1" class="collapse">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed dolor eu diam suscipit porttitor. Fusce tortor mi, imperdiet ac elementum ac, sagittis vel ex. Sed a massa vel neque volutpat porta. Aenean sit amet augue pretium, commodo nunc sit amet, lacinia tellus. Nunc dictum feugiat tempor. Cras vestibulum semper mi, in auctor risus porttitor ut. Sed velit ante, venenatis id turpis nec, tempus placerat lacus. Vivamus bibendum, orci non lacinia commodo, nulla nulla dignissim dolor, eu tincidunt mauris lorem non orci. In bibendum non elit id ullamcorper. Aliquam ullamcorper egestas est, non semper leo euismod vitae. Proin non aliquet eros. Cras lectus lacus, hendrerit ac leo in, suscipit rutrum mi. Quisque ultricies vestibulum tellus vel mattis.
+                                </p>
+                            </div>
+                            <a data-toggle="collapse" href="#collapse2">
+                                <div class="d-flex drop-down-title border-top">
+                                    <div class="d-flex flex-grow-1">
+                                        <h5 class="default-title">Apakah aplikasi ini aman?</h5>
+                                    </div>
+                                    <div class="d-flex align-self-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.493" height="14.527" viewBox="0 0 22.493 14.527">
+                                            <path id="Icon_awesome-angle-down" data-name="Icon awesome-angle-down" d="M10.055,24.771.492,15.209a1.681,1.681,0,0,1,0-2.384l1.589-1.589a1.681,1.681,0,0,1,2.384,0l6.778,6.778,6.778-6.778a1.681,1.681,0,0,1,2.384,0l1.589,1.589a1.681,1.681,0,0,1,0,2.384l-9.562,9.562a1.672,1.672,0,0,1-2.377,0Z" transform="translate(0.004 -10.74)"/>
+                                          </svg>                                  
+                                    </div>
+                                </div>
+                            </a>
+                            <div id="collapse2" class="collapse">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed dolor eu diam suscipit porttitor. Fusce tortor mi, imperdiet ac elementum ac, sagittis vel ex. Sed a massa vel neque volutpat porta. Aenean sit amet augue pretium, commodo nunc sit amet, lacinia tellus. Nunc dictum feugiat tempor. Cras vestibulum semper mi, in auctor risus porttitor ut. Sed velit ante, venenatis id turpis nec, tempus placerat lacus. Vivamus bibendum, orci non lacinia commodo, nulla nulla dignissim dolor, eu tincidunt mauris lorem non orci. In bibendum non elit id ullamcorper. Aliquam ullamcorper egestas est, non semper leo euismod vitae. Proin non aliquet eros. Cras lectus lacus, hendrerit ac leo in, suscipit rutrum mi. Quisque ultricies vestibulum tellus vel mattis.
+                                </p>
+                            </div>
+                            <a data-toggle="collapse" href="#collapse3">
+                                <div class="d-flex drop-down-title border-top">
+                                    <div class="d-flex flex-grow-1">
+                                        <h5 class="default-title">Apakah perlu install aplikasi ?</h5>
+                                    </div>
+                                    <div class="d-flex align-self-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.493" height="14.527" viewBox="0 0 22.493 14.527">
+                                            <path id="Icon_awesome-angle-down" data-name="Icon awesome-angle-down" d="M10.055,24.771.492,15.209a1.681,1.681,0,0,1,0-2.384l1.589-1.589a1.681,1.681,0,0,1,2.384,0l6.778,6.778,6.778-6.778a1.681,1.681,0,0,1,2.384,0l1.589,1.589a1.681,1.681,0,0,1,0,2.384l-9.562,9.562a1.672,1.672,0,0,1-2.377,0Z" transform="translate(0.004 -10.74)"/>
+                                          </svg>                                  
+                                    </div>
+                                </div>
+                            </a>
+                            <div id="collapse3" class="collapse">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed dolor eu diam suscipit porttitor. Fusce tortor mi, imperdiet ac elementum ac, sagittis vel ex. Sed a massa vel neque volutpat porta. Aenean sit amet augue pretium, commodo nunc sit amet, lacinia tellus. Nunc dictum feugiat tempor. Cras vestibulum semper mi, in auctor risus porttitor ut. Sed velit ante, venenatis id turpis nec, tempus placerat lacus. Vivamus bibendum, orci non lacinia commodo, nulla nulla dignissim dolor, eu tincidunt mauris lorem non orci. In bibendum non elit id ullamcorper. Aliquam ullamcorper egestas est, non semper leo euismod vitae. Proin non aliquet eros. Cras lectus lacus, hendrerit ac leo in, suscipit rutrum mi. Quisque ultricies vestibulum tellus vel mattis.
+                                </p>
+                            </div>
+                            <a data-toggle="collapse" href="#collapse4">
+                                <div class="d-flex drop-down-title border-top">
+                                    <div class="d-flex flex-grow-1">
+                                        <h5 class="default-title">Bagaimana jika kami memiliki keinginan khusus untuk custom?</h5>
+                                    </div>
+                                    <div class="d-flex align-self-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.493" height="14.527" viewBox="0 0 22.493 14.527">
+                                            <path id="Icon_awesome-angle-down" data-name="Icon awesome-angle-down" d="M10.055,24.771.492,15.209a1.681,1.681,0,0,1,0-2.384l1.589-1.589a1.681,1.681,0,0,1,2.384,0l6.778,6.778,6.778-6.778a1.681,1.681,0,0,1,2.384,0l1.589,1.589a1.681,1.681,0,0,1,0,2.384l-9.562,9.562a1.672,1.672,0,0,1-2.377,0Z" transform="translate(0.004 -10.74)"/>
+                                          </svg>                                  
+                                    </div>
+                                </div>
+                            </a>
+                            <div id="collapse4" class="collapse">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed dolor eu diam suscipit porttitor. Fusce tortor mi, imperdiet ac elementum ac, sagittis vel ex. Sed a massa vel neque volutpat porta. Aenean sit amet augue pretium, commodo nunc sit amet, lacinia tellus. Nunc dictum feugiat tempor. Cras vestibulum semper mi, in auctor risus porttitor ut. Sed velit ante, venenatis id turpis nec, tempus placerat lacus. Vivamus bibendum, orci non lacinia commodo, nulla nulla dignissim dolor, eu tincidunt mauris lorem non orci. In bibendum non elit id ullamcorper. Aliquam ullamcorper egestas est, non semper leo euismod vitae. Proin non aliquet eros. Cras lectus lacus, hendrerit ac leo in, suscipit rutrum mi. Quisque ultricies vestibulum tellus vel mattis.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div id="profile-bar">
+                            <div class="qr-title">
+                                <h4 class="default-title">Cerita kawan</h4>
+                            </div>
+                            <div class="qr-box">
+                                <div class="row">
+                                    <div id="profile-height" class="col-md-4">
+                                        <div class="profile-img">
+                                            <img class="vertical-center" src="../assets/image/john-wick.jpeg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 my-auto">
+                                        <div class="d-flex flex-column text-bar">
+                                            <div class="profile-text">
+                                                <h6 class="default-title disable-margin-bottom">John Wick.</h6>
+                                            </div>
+                                            <div class="profile-text">
+                                                <h6 class="default-title disable-margin-bottom" style="color: #FF5722;">Excommunicado</h6>
+                                            </div>
+                                            <div class="profile-text">
+                                                <p class="disable-margin-bottom">John eventually became the top enforcer for the New York Russian crime syndicate, becoming a feared and ruthless hitman that people describe as "a man of focus, commitment, and sheer will". He was later nicknamed "Baba Yaga", being further described as the man one would send to "kill the Bogeyman".</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Last Slide -->
+        <div id="disclaimer" class="margin-default pt-5">
+            <div class="container-fluid">
+                <div class="qr-box">
+                    <div class="qr-title">
+                        <h4>DISCLAIMER</h4>
+                        <h5>Aplikasi ini gratis, tidak dipungut biaya apapun. Tujuan kami adaah bagian dari pengalaman kami sebagai customer anda. Jika ada pihak yang meminta bayaran dengan platform ini, itu bukan tanggung jawab kami.</h5>
+                        <br>
+                        <p>PERHATIAN!<br>Aplikasi ini menuntut anda untuk kreatif dalam mengemas menu resto anda untuk terlihat menarik dan memanjakan calon pembeli anda. Hargailah customer anda dengan membuat menu yang rapi dan disertai gambar yang mengugah selera. Karena terkadang kami lebih lapar dimata dibandingkan perut. Jadi, mari kita berkreasi. Salam!.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
