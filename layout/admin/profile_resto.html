@@ -1,11 +1,334 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Profile Resto</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../../assets/css/main.css">
+        <link rel="stylesheet" href="../../assets/css/custom-skin.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+        <style>
+            #mapid {
+                height: 300px;
+                margin-top: 20px;
+            }
+        </style>
     </head>
     <body>
-        
-        <script src="../assets/bootstrap/js/bootstrap.min.js" ></script>
+        <div class="d-flex">
+            <div class="float-left sidebar-wrapper" id="sidebar">
+                <div class="d-flex flex-column flex-shrink-0 p-3 sidebar-light shadow-sm">
+                    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                        <span class="mr-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55" height="54" viewBox="0 0 55 54">
+                                <defs>
+                                    <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 215 212">
+                                    <image width="215" height="212" xlink:href="data:image/png;base64,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"/>
+                                    </pattern>
+                                </defs>
+                                <rect id="Component_6_1" data-name="Component 6 – 1" width="55" height="54" fill="url(#pattern)"/>
+                            </svg>
+                        </span>
+                        <span class="logo-text"><strong>RESTO X</strong></span>
+                    </a>
+                    <hr class="line-logo">
+                    <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link" aria-current="page">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="19.92" viewBox="0 0 21 19.92">
+                                <path id="Icon_material-dashboard" data-name="Icon material-dashboard" d="M4.5,15.567h9.333V4.5H4.5Zm0,8.853h9.333V17.78H4.5Zm11.667,0H25.5V13.353H16.167Zm0-19.92v6.64H25.5V4.5Z" transform="translate(-4.5 -4.5)"/>
+                            </svg>
+                            <span class="side-bar-text d-none d-md-inline">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="data_menu.html" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="19.941" viewBox="0 0 21 19.941">
+                                <path id="Icon_material-restaurant-menu" data-name="Icon material-restaurant-menu" d="M10,15.91,13.1,12.8,5.395,5.1a4.4,4.4,0,0,0,0,6.216Zm7.446-1.988c1.68.78,4.042.231,5.788-1.516,2.1-2.1,2.5-5.107.89-6.721s-4.613-1.208-6.721.89c-1.746,1.746-2.3,4.108-1.516,5.788L5.164,23.081,6.713,24.63l7.567-7.545,7.556,7.556,1.549-1.549-7.556-7.556Z" transform="translate(-4.11 -4.7)"/>
+                            </svg>
+                            <span class="side-bar-text d-none d-md-inline">Data Menu</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile_resto.html" class="nav-link active">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="18.9" viewBox="0 0 21 18.9">
+                                <path id="Icon_material-business-center" data-name="Icon material-business-center" d="M11.4,18.15V17.1H4.061l-.01,4.2a2.093,2.093,0,0,0,2.1,2.1h14.7a2.093,2.093,0,0,0,2.1-2.1V17.1H15.6v1.05ZM21.9,8.7H17.69V6.6l-2.1-2.1h-4.2L9.29,6.6V8.7H5.1A2.106,2.106,0,0,0,3,10.8v3.15a2.093,2.093,0,0,0,2.1,2.1h6.3v-2.1h4.2v2.1h6.3a2.106,2.106,0,0,0,2.1-2.1V10.8A2.106,2.106,0,0,0,21.9,8.7Zm-6.3,0H11.4V6.6h4.2Z" transform="translate(-3 -4.5)"/>
+                            </svg>
+                            <span class="side-bar-text active d-none d-md-inline">Profile Resto</span>
+                        </a>
+                    </li>
+                    </ul>
+                    <hr>
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center link-dark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+                                <path id="Icon_material-help" data-name="Icon material-help" d="M13.5,3A10.5,10.5,0,1,0,24,13.5,10.5,10.5,0,0,0,13.5,3Zm1.05,17.85h-2.1v-2.1h2.1Zm2.174-8.137-.945.966A3.574,3.574,0,0,0,14.55,16.65h-2.1v-.525a4.226,4.226,0,0,1,1.228-2.971l1.3-1.323a2.053,2.053,0,0,0,.62-1.48,2.1,2.1,0,1,0-4.2,0H9.3a4.2,4.2,0,1,1,8.4,0A3.341,3.341,0,0,1,16.723,12.712Z" transform="translate(-3 -3)"/>
+                            </svg>
+                            <span class="sidebar-bottom-text d-none d-md-inline"><u>Hubungi Developer?</u></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="float-left content-wrapper" id="content">
+                <nav class="navbar navbar-expand navbar-custom" aria-label="Second navbar example">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarsExample02">
+                            <ul class="navbar-nav me-auto">
+
+                            </ul>
+                            <div class="d-inline-flex">
+                                <span class="text-profile">Yanti</span>
+                                <img src="https://via.placeholder.com/150.png" width="40" class="rounded-circle" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- content -->
+                <div class="container-fluid">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-3">
+                        <h4 class="h3 mb-0 heading-text">Profile Resto</h4>
+                        <p class="d-none d-sm-inline-block sub-heading-text">Resto ID - 325DR12132</p>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <div class="card-profile-red">
+                                <div>
+                                    <div class="circle-profile circle-absolute shadow-sm">
+                                        <img src="https://via.placeholder.com/150.png" class="img-profile" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-profile-white">
+                                <button class="btn-profile btn-logo">Ganti Logo</button>
+                                <button class="btn-profile btn-cover">Ganti Cover</button>
+                                <div class="row margin-row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <h4 class="card-profile-title">Resto X</h4>
+                                                <h5 class="card-profile-tagline">Asian Bistro</h5>
+                                            </div>
+                                            <div class="col-4 text-end">
+                                                <button class="btn-transparent" type="button" onclick="showModal('edit-profile-modal')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon-edit-profile" width="20" height="20" viewBox="0 0 26.651 26.651">
+                                                        <g id="Icon_feather-edit" data-name="Icon feather-edit" transform="translate(-1.5 -1.318)">
+                                                            <path id="Path_12" data-name="Path 12" d="M13.579,6H5.351A2.351,2.351,0,0,0,3,8.351V24.807a2.351,2.351,0,0,0,2.351,2.351H21.807a2.351,2.351,0,0,0,2.351-2.351V16.579" transform="translate(0 -0.689)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                                                            <path id="Path_13" data-name="Path 13" d="M24.342,3.548a2.493,2.493,0,0,1,3.526,3.526L16.7,18.241,12,19.417l1.175-4.7Z" transform="translate(-1.947)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                                                        </g>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <p class="card-profile-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio maxime obcaecati corporis numquam, magni ipsam, explicabo ipsa quibusdam cumque, porro vitae iure eos? Necessitatibus, deleniti repudiandae. Quae hic atque quos?</p>
+                                        <div class="w-100"><hr class="line-card-profile"></div>
+                                    </div>
+                                    <div class="col-md-12 col-12">
+                                        <div class="row">
+                                            <div class="col-md-6 col-12 mb-3">
+                                                <h4 class="card-profile-contact">Whatsapp</h4>
+                                                <div class="d-inline">
+                                                    <span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 31.5 31.5">
+                                                            <path id="Icon_awesome-whatsapp" data-name="Icon awesome-whatsapp" d="M26.782,6.827A15.614,15.614,0,0,0,2.215,25.664L0,33.75l8.276-2.173a15.562,15.562,0,0,0,7.46,1.9h.007A15.76,15.76,0,0,0,31.5,17.866,15.671,15.671,0,0,0,26.782,6.827ZM15.743,30.846a12.951,12.951,0,0,1-6.609-1.807l-.471-.281L3.755,30.045l1.308-4.788-.309-.492a13,13,0,1,1,24.11-6.9,13.119,13.119,0,0,1-13.12,12.98Zm7.116-9.717c-.387-.2-2.306-1.139-2.665-1.266s-.619-.2-.879.2-1.005,1.266-1.237,1.533-.457.3-.844.1a10.617,10.617,0,0,1-5.309-4.641c-.4-.689.4-.64,1.146-2.13a.723.723,0,0,0-.035-.682c-.1-.2-.879-2.116-1.2-2.9-.316-.759-.64-.654-.879-.668s-.485-.014-.745-.014a1.445,1.445,0,0,0-1.041.485A4.383,4.383,0,0,0,7.8,14.4a7.641,7.641,0,0,0,1.589,4.036c.2.26,2.749,4.2,6.666,5.892,2.475,1.069,3.445,1.16,4.683.977a4,4,0,0,0,2.63-1.856,3.262,3.262,0,0,0,.225-1.856C23.505,21.417,23.245,21.319,22.859,21.129Z" transform="translate(0 -2.25)" fill="#169a55"/>
+                                                        </svg>
+                                                    </span>
+                                                    <span class="card-profile-contact-detail">0813232894342</span>
+                                                </div>
+                                                <h4 class="card-profile-contact mt-4">Social Media</h4>
+                                                <div class="d-inline">
+                                                    <span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 31.518 31.511">
+                                                            <path id="Icon_awesome-instagram" data-name="Icon awesome-instagram" d="M15.757,9.914a8.079,8.079,0,1,0,8.079,8.079A8.066,8.066,0,0,0,15.757,9.914Zm0,13.331a5.252,5.252,0,1,1,5.252-5.252,5.262,5.262,0,0,1-5.252,5.252ZM26.051,9.584A1.884,1.884,0,1,1,24.166,7.7,1.88,1.88,0,0,1,26.051,9.584ZM31.4,11.5a9.325,9.325,0,0,0-2.545-6.6,9.387,9.387,0,0,0-6.6-2.545c-2.6-.148-10.4-.148-13,0a9.373,9.373,0,0,0-6.6,2.538,9.356,9.356,0,0,0-2.545,6.6c-.148,2.6-.148,10.4,0,13a9.325,9.325,0,0,0,2.545,6.6,9.4,9.4,0,0,0,6.6,2.545c2.6.148,10.4.148,13,0a9.325,9.325,0,0,0,6.6-2.545,9.387,9.387,0,0,0,2.545-6.6c.148-2.6.148-10.392,0-12.994ZM28.041,27.281a5.318,5.318,0,0,1-3,3c-2.074.823-7,.633-9.288.633s-7.221.183-9.288-.633a5.318,5.318,0,0,1-3-3c-.823-2.074-.633-7-.633-9.288s-.183-7.221.633-9.288a5.318,5.318,0,0,1,3-3c2.074-.823,7-.633,9.288-.633s7.221-.183,9.288.633a5.318,5.318,0,0,1,3,3c.823,2.074.633,7,.633,9.288S28.863,25.214,28.041,27.281Z" transform="translate(0.005 -2.238)"/>
+                                                        </svg>
+                                                    </span>
+                                                    <span class="card-profile-contact-detail">@resto_x</span>
+                                                </div>
+                                                <div class="clearfix mb-2"></div>
+                                                <div class="d-inline">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 31.482 31.482">
+                                                        <path id="Icon_awesome-facebook-square" data-name="Icon awesome-facebook-square" d="M28.109,2.25H3.373A3.373,3.373,0,0,0,0,5.623V30.359a3.373,3.373,0,0,0,3.373,3.373h9.645v-10.7H8.591V17.991h4.427v-3.84c0-4.367,2.6-6.78,6.582-6.78a26.821,26.821,0,0,1,3.9.34V12H21.3a2.519,2.519,0,0,0-2.84,2.722v3.271H23.3l-.773,5.038h-4.06v10.7h9.645a3.373,3.373,0,0,0,3.373-3.373V5.623A3.373,3.373,0,0,0,28.109,2.25Z" transform="translate(0 -2.25)"/>
+                                                    </svg>
+                                                    <span class="card-profile-contact-detail">@restoX</span>
+                                                </div>
+                                                <div class="clearfix mb-2"></div>
+                                                <div class="d-inline">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="19" viewBox="0 0 30 24">
+                                                        <path id="Icon_material-web" data-name="Icon material-web" d="M30,6H6A3,3,0,0,0,3.015,9L3,27a3.009,3.009,0,0,0,3,3H30a3.009,3.009,0,0,0,3-3V9A3.009,3.009,0,0,0,30,6ZM22.5,27H6V21H22.5Zm0-7.5H6v-6H22.5ZM30,27H24V13.5h6Z" transform="translate(-3 -6)"/>
+                                                    </svg>
+                                                    <span class="card-profile-contact-detail">www.restox.com</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <div class="d-flex bd-highlight">
+                                                    <div class="w-100 bd-highlight">
+                                                        <h4 class="card-profile-contact">Jl Laksamana Raja Di Laut</h4>
+                                                    </div>
+                                                    <div class="flex-shrink-1 bd-highlight">
+                                                        <button class="btn-transparent" type="button" onclick="showModal('edit-alamat-modal')">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 26.651 26.651">
+                                                                <g id="Icon_feather-edit" data-name="Icon feather-edit" transform="translate(-1.5 -1.318)">
+                                                                <path id="Path_12" data-name="Path 12" d="M13.579,6H5.351A2.351,2.351,0,0,0,3,8.351V24.807a2.351,2.351,0,0,0,2.351,2.351H21.807a2.351,2.351,0,0,0,2.351-2.351V16.579" transform="translate(0 -0.689)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                                                                <path id="Path_13" data-name="Path 13" d="M24.342,3.548a2.493,2.493,0,0,1,3.526,3.526L16.7,18.241,12,19.417l1.175-4.7Z" transform="translate(-1.947)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                                                                </g>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="w-100">
+                                                    <hr class="line-card-location">
+                                                </div>
+                                                <p class="card-profile-contact-detail m-0">Lat. 2121281912801201, Long. -2124923828932039203</p>
+                                                <div id="mapid"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="edit-profile-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Profile</h5>
+                        <button type="button" class="btn-transparent" data-bs-dismiss="modal" aria-label="Close">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                                <g id="Icon_ionic-ios-close-circle-outline" data-name="Icon ionic-ios-close-circle-outline" transform="translate(-3.375 -3.375)">
+                                  <path id="Path_14" data-name="Path 14" d="M23.295,21.705,19.589,18l3.705-3.705a1.124,1.124,0,0,0-1.589-1.589L18,16.411l-3.705-3.705a1.124,1.124,0,0,0-1.589,1.589L16.411,18l-3.705,3.705a1.086,1.086,0,0,0,0,1.589,1.116,1.116,0,0,0,1.589,0L18,19.589l3.705,3.705a1.129,1.129,0,0,0,1.589,0A1.116,1.116,0,0,0,23.295,21.705Z"/>
+                                  <path id="Path_15" data-name="Path 15" d="M18,5.344A12.651,12.651,0,1,1,9.049,9.049,12.573,12.573,0,0,1,18,5.344m0-1.969A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z"/>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group mb-3">
+                                        <label for="">Nama Kategori</label>
+                                        <input type="text" class="form-control-round">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="">Tagline</label>
+                                        <input type="text" class="form-control-round">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="">Deskripsi Resto</label>
+                                        <textarea name="" id="" cols="30" rows="5" class="form-control-round"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group mb-3">
+                                        <label for="">Instagram</label>
+                                        <input type="text" class="form-control-round">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="">Facebook</label>
+                                        <input type="text" class="form-control-round">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="">Website</label>
+                                        <input type="text" class="form-control-round">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex bd-highlight">
+                            <div class="p-2 w-100 bd-highlight">
+                                <button type="button" class="btn-hide-modal" data-bs-dismiss="modal">Batal</button>
+                            </div>
+                            <div class="p-2 flex-shrink-1 bd-highlight">
+                                <button type="button" class="btn-green-round">Simpan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="edit-alamat-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Alamat</h5>
+                        <button type="button" class="btn-transparent" data-bs-dismiss="modal" aria-label="Close">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                                <g id="Icon_ionic-ios-close-circle-outline" data-name="Icon ionic-ios-close-circle-outline" transform="translate(-3.375 -3.375)">
+                                  <path id="Path_14" data-name="Path 14" d="M23.295,21.705,19.589,18l3.705-3.705a1.124,1.124,0,0,0-1.589-1.589L18,16.411l-3.705-3.705a1.124,1.124,0,0,0-1.589,1.589L16.411,18l-3.705,3.705a1.086,1.086,0,0,0,0,1.589,1.116,1.116,0,0,0,1.589,0L18,19.589l3.705,3.705a1.129,1.129,0,0,0,1.589,0A1.116,1.116,0,0,0,23.295,21.705Z"/>
+                                  <path id="Path_15" data-name="Path 15" d="M18,5.344A12.651,12.651,0,1,1,9.049,9.049,12.573,12.573,0,0,1,18,5.344m0-1.969A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z"/>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="form-group mb-3">
+                                <label for="">Latitude</label>
+                                <input type="text" class="form-control-round">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="">Longitude</label>
+                                <input type="text" class="form-control-round">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="">Alamat</label>
+                                <textarea name="" id="" cols="30" rows="5" class="form-control-round"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex bd-highlight">
+                            <div class="p-2 w-100 bd-highlight">
+                                <button type="button" class="btn-hide-modal" data-bs-dismiss="modal">Batal</button>
+                            </div>
+                            <div class="p-2 flex-shrink-1 bd-highlight">
+                                <button type="button" class="btn-green-round">Simpan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js" ></script>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+        <script>
+            function showModal(modal) {
+                $('#' + modal).modal('show');
+            }
+            var mymap = L.map('mapid').setView([-8.334726304734911, 115.14612776997824], 15);
+            L.Map.include({
+                getMarkerById: function (id) {
+                    var marker = null;
+                    this.eachLayer(function (layer) {
+                        if (layer instanceof L.Marker) {
+                            if (layer.options.id === id) {
+                                marker = layer;
+                            }
+                        }
+                    });
+                    return marker;
+                }
+            });
+
+            L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                id: 'mapbox/streets-v11',
+                tileSize: 512,
+                zoomOffset: -1,
+                accessToken: 'pk.eyJ1IjoiZmlyZXJleDk3OSIsImEiOiJja2dobG1wanowNTl0MzNwY3Fld2hpZnJoIn0.YRQqomJr_RmnW3q57oNykw'
+            }).addTo(mymap);
+        </script>
     </body>
 </html>

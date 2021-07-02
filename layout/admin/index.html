@@ -11,9 +11,9 @@
         <link rel="stylesheet" href="../../assets/css/custom-skin.css">
     </head>
     <body>
-        <div class="row">
-            <div class="col-md-2">
-                <div class="d-flex flex-column flex-shrink-0 p-3 sidebar-light">
+        <div class="d-flex">
+            <div class="float-left sidebar-wrapper" id="sidebar">
+                <div class="d-flex flex-column flex-shrink-0 p-3 sidebar-light shadow-sm">
                     <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
                         <span class="mr-2">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55" height="54" viewBox="0 0 55 54">
@@ -27,57 +27,292 @@
                         </span>
                         <span class="logo-text"><strong>RESTO X</strong></span>
                     </a>
-                    <hr>
+                    <hr class="line-logo">
                     <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active" aria-current="page">
-                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-                        Home
+                        <a href="index.html" class="nav-link active" aria-current="page">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="19.92" viewBox="0 0 21 19.92">
+                                <path id="Icon_material-dashboard" data-name="Icon material-dashboard" d="M4.5,15.567h9.333V4.5H4.5Zm0,8.853h9.333V17.78H4.5Zm11.667,0H25.5V13.353H16.167Zm0-19.92v6.64H25.5V4.5Z" transform="translate(-4.5 -4.5)" fill="#fff"/>
+                            </svg>
+                            <span class="side-bar-text active d-none d-md-inline">Dashboard</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-link link-dark">
-                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-                        Dashboard
+                    <li class="nav-item">
+                        <a href="data_menu.html" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="19.941" viewBox="0 0 21 19.941">
+                                <path id="Icon_material-restaurant-menu" data-name="Icon material-restaurant-menu" d="M10,15.91,13.1,12.8,5.395,5.1a4.4,4.4,0,0,0,0,6.216Zm7.446-1.988c1.68.78,4.042.231,5.788-1.516,2.1-2.1,2.5-5.107.89-6.721s-4.613-1.208-6.721.89c-1.746,1.746-2.3,4.108-1.516,5.788L5.164,23.081,6.713,24.63l7.567-7.545,7.556,7.556,1.549-1.549-7.556-7.556Z" transform="translate(-4.11 -4.7)"/>
+                            </svg>
+                            <span class="side-bar-text d-none d-md-inline">Data Menu</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-link link-dark">
-                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
-                        Orders
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link link-dark">
-                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
-                        Products
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link link-dark">
-                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-                        Customers
+                    <li class="nav-item">
+                        <a href="profile_resto.html" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="18.9" viewBox="0 0 21 18.9">
+                                <path id="Icon_material-business-center" data-name="Icon material-business-center" d="M11.4,18.15V17.1H4.061l-.01,4.2a2.093,2.093,0,0,0,2.1,2.1h14.7a2.093,2.093,0,0,0,2.1-2.1V17.1H15.6v1.05ZM21.9,8.7H17.69V6.6l-2.1-2.1h-4.2L9.29,6.6V8.7H5.1A2.106,2.106,0,0,0,3,10.8v3.15a2.093,2.093,0,0,0,2.1,2.1h6.3v-2.1h4.2v2.1h6.3a2.106,2.106,0,0,0,2.1-2.1V10.8A2.106,2.106,0,0,0,21.9,8.7Zm-6.3,0H11.4V6.6h4.2Z" transform="translate(-3 -4.5)"/>
+                            </svg>
+                            <span class="side-bar-text d-none d-md-inline">Profile Resto</span>
                         </a>
                     </li>
                     </ul>
                     <hr>
                     <div class="dropdown">
-                    <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                        <strong>mdo</strong>
-                    </a>
-                    <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
-                    </ul>
+                        <a href="#" class="d-flex align-items-center link-dark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+                                <path id="Icon_material-help" data-name="Icon material-help" d="M13.5,3A10.5,10.5,0,1,0,24,13.5,10.5,10.5,0,0,0,13.5,3Zm1.05,17.85h-2.1v-2.1h2.1Zm2.174-8.137-.945.966A3.574,3.574,0,0,0,14.55,16.65h-2.1v-.525a4.226,4.226,0,0,1,1.228-2.971l1.3-1.323a2.053,2.053,0,0,0,.62-1.48,2.1,2.1,0,1,0-4.2,0H9.3a4.2,4.2,0,1,1,8.4,0A3.341,3.341,0,0,1,16.723,12.712Z" transform="translate(-3 -3)"/>
+                            </svg>
+                            <span class="sidebar-bottom-text d-none d-md-inline"><u>Hubungi Developer?</u></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="float-left content-wrapper">
+                <nav class="navbar navbar-expand navbar-custom" aria-label="Second navbar example">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarsExample02">
+                            <ul class="navbar-nav me-auto">
+
+                            </ul>
+                            <div class="d-inline-flex">
+                                <span class="text-profile">Yanti</span>
+                                <img src="https://via.placeholder.com/150.png" width="40" class="rounded-circle" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- content -->
+                <div class="container-fluid">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-3">
+                        <h4 class="h3 mb-0 heading-text">Dashboard, Resto X</h4>
+                        <p class="d-none d-sm-inline-block sub-heading-text">Resto ID - 325DR12132</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10 col-12">
+                            <div class="row">
+                                <div class="col-md-4 col-12">
+                                    <div class="card bg-orange card-summary shadow">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <p class="card-text-title">Welcome</p>
+                                                    <div class="card-identity">
+                                                        <p class="card-name-text">Yanti</p>
+                                                        <p class="card-role-text">(Admin)</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="d-flex justify-content-end">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90" height="90" viewBox="0 0 100 100">
+                                                            <defs>
+                                                              <filter id="Ellipse_1" x="0" y="0" width="100" height="100" filterUnits="userSpaceOnUse">
+                                                                <feOffset dy="3" input="SourceAlpha"/>
+                                                                <feGaussianBlur stdDeviation="3" result="blur"/>
+                                                                <feFlood flood-opacity="0.161"/>
+                                                                <feComposite operator="in" in2="blur"/>
+                                                                <feComposite in="SourceGraphic"/>
+                                                              </filter>
+                                                            </defs>
+                                                            <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Ellipse_1)">
+                                                              <circle id="Ellipse_1-2" data-name="Ellipse 1" cx="41" cy="41" r="41" transform="translate(9 6)" fill="#fff"/>
+                                                            </g>
+                                                            <path id="Icon_map-food" data-name="Icon map-food" d="M52.5,14.966,48.243,48.313H33.874L29.637,14.8H47.179L50.646,2.825l1.965.592L49.285,14.941l3.212.025ZM27.606,34.259s.537-4.324-6.913-4.324H8.827c-7.44,0-6.913,4.324-6.913,4.324H27.606ZM1.913,43.988s-.526,4.324,6.913,4.324H20.694c7.451,0,6.913-4.324,6.913-4.324H1.913Zm24.578-2.162a2.486,2.486,0,0,0,2.2-2.7,2.483,2.483,0,0,0-2.2-2.7H2.925a2.488,2.488,0,0,0-2.205,2.7,2.491,2.491,0,0,0,2.205,2.7H26.491Z" transform="translate(19.736 18.931)" fill="#d12028"/>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <div class="card card-summary shadow">
+                                        <div class="card-body card-body-summary">
+                                            <div class="d-flex bd-highlight mb-3" style="margin-top: -8px;">
+                                                <div class="me-auto p-2 bd-highlight">
+                                                    <h5 class="card-title-summary">Kategori Menu</h5>
+                                                </div>
+                                                <div class="p-2 bd-highlight card-title-summary-svg">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20.31" height="18.493" viewBox="0 0 25.31 22.493">
+                                                        <path id="Icon_awesome-edit" data-name="Icon awesome-edit" d="M17.69,3.658l3.963,3.963a.43.43,0,0,1,0,.606l-9.6,9.6-4.078.453a.855.855,0,0,1-.945-.945l.453-4.078,9.6-9.6A.43.43,0,0,1,17.69,3.658Zm7.118-1.006L22.664.508a1.719,1.719,0,0,0-2.425,0L18.683,2.063a.43.43,0,0,0,0,.606l3.963,3.963a.43.43,0,0,0,.606,0l1.555-1.555a1.719,1.719,0,0,0,0-2.425ZM16.873,15.215v4.473H2.812V5.627h10.1a.54.54,0,0,0,.373-.154l1.758-1.758a.527.527,0,0,0-.373-.9H2.109A2.11,2.11,0,0,0,0,4.924V20.391A2.11,2.11,0,0,0,2.109,22.5H17.576a2.11,2.11,0,0,0,2.109-2.109V13.457a.528.528,0,0,0-.9-.373l-1.758,1.758A.54.54,0,0,0,16.873,15.215Z" transform="translate(0 -0.007)" fill="#6b6b6b"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="w-100" style="margin-top: -10px;">
+                                                <hr class="p-0">
+                                            </div>
+                                            <div class="d-flex justify-content-end">
+                                                <p class="card-text-summary"><u>8</u></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <div class="card card-summary shadow">
+                                        <div class="card-body card-body-summary">
+                                            <div class="d-flex bd-highlight mb-3" style="margin-top: -8px;">
+                                                <div class="me-auto p-2 bd-highlight">
+                                                    <h5 class="card-title-summary">Jumlah Menu</h5>
+                                                </div>
+                                                <div class="p-2 bd-highlights card-title-summary-svg">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20.31" height="18.493" viewBox="0 0 25.31 22.493">
+                                                        <path id="Icon_awesome-edit" data-name="Icon awesome-edit" d="M17.69,3.658l3.963,3.963a.43.43,0,0,1,0,.606l-9.6,9.6-4.078.453a.855.855,0,0,1-.945-.945l.453-4.078,9.6-9.6A.43.43,0,0,1,17.69,3.658Zm7.118-1.006L22.664.508a1.719,1.719,0,0,0-2.425,0L18.683,2.063a.43.43,0,0,0,0,.606l3.963,3.963a.43.43,0,0,0,.606,0l1.555-1.555a1.719,1.719,0,0,0,0-2.425ZM16.873,15.215v4.473H2.812V5.627h10.1a.54.54,0,0,0,.373-.154l1.758-1.758a.527.527,0,0,0-.373-.9H2.109A2.11,2.11,0,0,0,0,4.924V20.391A2.11,2.11,0,0,0,2.109,22.5H17.576a2.11,2.11,0,0,0,2.109-2.109V13.457a.528.528,0,0,0-.9-.373l-1.758,1.758A.54.54,0,0,0,16.873,15.215Z" transform="translate(0 -0.007)" fill="#6b6b6b"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="w-100" style="margin-top: -10px;">
+                                                <hr>
+                                            </div>
+                                            <div class="d-flex justify-content-end">
+                                                <p class="card-text-summary"><u>35</u></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-12">
+                            <div class="card card-summary shadow">
+                                <div class="card-body">
+                                    <a href="#">
+                                        <div class="d-flex justify-content-center" style="margin-top: 10px;">
+                                            <div class="align-self-center">
+                                                <svg style="margin-right: 20px;" xmlns="http://www.w3.org/2000/svg" width="61.371" height="61.371" viewBox="0 0 61.371 61.371">
+                                                    <path id="Icon_awesome-qrcode" data-name="Icon awesome-qrcode" d="M0,28.552H26.3V2.25H0ZM8.767,11.017h8.767v8.767H8.767Zm26.3-8.767v26.3h26.3V2.25ZM52.6,19.785H43.837V11.017H52.6ZM0,63.621H26.3v-26.3H0ZM8.767,46.087h8.767v8.767H8.767Zm48.22-8.767h4.384V54.854H48.22V50.47H43.837V63.621H35.069v-26.3H48.22V41.7h8.767Zm0,21.918h4.384v4.384H56.988Zm-8.767,0H52.6v4.384H48.22Z" transform="translate(0 -2.25)" fill="#484848"/>
+                                                </svg>
+                                            </div>
+                                            <div class="align-self-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="31.5" height="36" viewBox="0 0 31.5 36">
+                                                    <path id="Icon_awesome-share-alt" data-name="Icon awesome-share-alt" d="M24.75,22.5a6.721,6.721,0,0,0-4.2,1.469l-7.206-4.5a6.789,6.789,0,0,0,0-2.931l7.206-4.5A6.738,6.738,0,1,0,18.16,8.215l-7.206,4.5a6.75,6.75,0,1,0,0,10.562l7.206,4.5A6.751,6.751,0,1,0,24.75,22.5Z"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5 col-12">
+                            <h4 class="sub-heading-text-2 mb-4">Grafik Kunjungan</h4>
+                            <div class="card shadow mb-4">
+                                <div class="card-body card-body-summary">
+                                    <h5 class="card-custom-title">Minggu ini</h5>
+                                    <div class="w-100" style="margin-top: -2px;">
+                                        <hr class="line-blue">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-12">
+                            <div class="row">
+                                <div class="col-md-6 col-12">
+                                    <h4 class="sub-heading-text-2 mb-4">Daftar Menu Favorite</h4>
+                                    <div class="card shadow mb-4">
+                                        <div class="card-body card-body-summary">
+                                            <div class="d-flex bd-highlight">
+                                                <div class="w-100 bd-highlight">
+                                                    <h5 class="card-custom-title">2 Menu</h5>
+                                                </div>
+                                                <div class="flex-shrink-1 bd-highlight" style="padding-right: 1rem;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16.23" height="15.819" viewBox="0 0 16.23 15.819">
+                                                        <path id="Icon_awesome-arrow-down" data-name="Icon awesome-arrow-down" d="M15.156,9.151l.8.8a.866.866,0,0,1,0,1.228L8.922,18.224a.866.866,0,0,1-1.228,0L.653,11.183a.866.866,0,0,1,0-1.228l.8-.8A.87.87,0,0,1,2.7,9.165L6.858,13.53V3.119a.867.867,0,0,1,.869-.869H8.886a.867.867,0,0,1,.869.869V13.53l4.158-4.365A.864.864,0,0,1,15.156,9.151Z" transform="translate(-2.25 16.216) rotate(-90)" fill="#ff5722"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="w-100" style="margin-top: -10px;">
+                                                <hr class="line-orange">
+                                            </div>
+                                            <div class="card-custom-body">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">
+                                                        <div class="d-flex bd-highlight">
+                                                            <div class="flex-grow-1 bd-highlight">
+                                                                <p class="card-list-item">Ayam Rica-rica</p>
+                                                            </div>
+                                                            <div class="bd-highlight">
+                                                                <p class="card-list-price">Rp 40.000,-</p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <div class="d-flex bd-highlight">
+                                                            <div class="flex-grow-1 bd-highlight">
+                                                                <p class="card-list-item">Nasi Goreng</p>
+                                                            </div>
+                                                            <div class="bd-highlight">
+                                                                <p class="card-list-price">Rp 40.000,-</p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <h4 class="sub-heading-text-2 mb-4">Kategori Menu</h4>
+                                    <div class="card shadow mb-4">
+                                        <div class="card-body card-body-summary">
+                                            <h5 class="card-custom-title">4 Kategori</h5>
+                                            <div class="w-100" style="margin-top: -2px;">
+                                                <hr class="line-orange">
+                                            </div>
+                                            <div class="card-custom-body">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">
+                                                        <div class="d-flex bd-highlight">
+                                                            <div class="flex-grow-1 bd-highlight">
+                                                                <p class="card-list-item mt-2">Favorite</p>
+                                                            </div>
+                                                            <div class="bd-highlight">
+                                                                <p class="number-circle">2</p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <div class="d-flex bd-highlight">
+                                                            <div class="flex-grow-1 bd-highlight">
+                                                                <p class="card-list-item mt-2">Makanan</p>
+                                                            </div>
+                                                            <div class="bd-highlight">
+                                                                <p class="number-circle">15</p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <div class="d-flex bd-highlight">
+                                                            <div class="flex-grow-1 bd-highlight">
+                                                                <p class="card-list-item mt-2">Minuman</p>
+                                                            </div>
+                                                            <div class="bd-highlight">
+                                                                <p class="number-circle">10</p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <div class="d-flex bd-highlight">
+                                                            <div class="flex-grow-1 bd-highlight">
+                                                                <p class="card-list-item mt-2">Snack</p>
+                                                            </div>
+                                                            <div class="bd-highlight">
+                                                                <p class="number-circle">5</p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js" ></script>
-        <script src="" async defer></script>
+        <script>
+
+        </script>
     </body>
 </html>

@@ -1,11 +1,413 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Data Menu</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../../assets/css/main.css">
+        <link rel="stylesheet" href="../../assets/css/custom-skin.css">
     </head>
     <body>
-        
-        <script src="../assets/bootstrap/js/bootstrap.min.js" ></script>
+        <div class="d-flex">
+            <div class="float-left sidebar-wrapper" id="sidebar">
+                <div class="d-flex flex-column flex-shrink-0 p-3 sidebar-light shadow-sm">
+                    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                        <span class="mr-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55" height="54" viewBox="0 0 55 54">
+                                <defs>
+                                    <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 215 212">
+                                    <image width="215" height="212" xlink:href="data:image/png;base64,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"/>
+                                    </pattern>
+                                </defs>
+                                <rect id="Component_6_1" data-name="Component 6 – 1" width="55" height="54" fill="url(#pattern)"/>
+                            </svg>
+                        </span>
+                        <span class="logo-text"><strong>RESTO X</strong></span>
+                    </a>
+                    <hr class="line-logo">
+                    <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link" aria-current="page">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="19.92" viewBox="0 0 21 19.92">
+                                <path id="Icon_material-dashboard" data-name="Icon material-dashboard" d="M4.5,15.567h9.333V4.5H4.5Zm0,8.853h9.333V17.78H4.5Zm11.667,0H25.5V13.353H16.167Zm0-19.92v6.64H25.5V4.5Z" transform="translate(-4.5 -4.5)"/>
+                            </svg>
+                            <span class="side-bar-text d-none d-md-inline">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="data_menu.html" class="nav-link active">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="19.941" viewBox="0 0 21 19.941">
+                                <path id="Icon_material-restaurant-menu" data-name="Icon material-restaurant-menu" d="M10,15.91,13.1,12.8,5.395,5.1a4.4,4.4,0,0,0,0,6.216Zm7.446-1.988c1.68.78,4.042.231,5.788-1.516,2.1-2.1,2.5-5.107.89-6.721s-4.613-1.208-6.721.89c-1.746,1.746-2.3,4.108-1.516,5.788L5.164,23.081,6.713,24.63l7.567-7.545,7.556,7.556,1.549-1.549-7.556-7.556Z" transform="translate(-4.11 -4.7)"/>
+                            </svg>
+                            <span class="side-bar-text d-none d-md-inline active">Data Menu</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile_resto.html" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="18.9" viewBox="0 0 21 18.9">
+                                <path id="Icon_material-business-center" data-name="Icon material-business-center" d="M11.4,18.15V17.1H4.061l-.01,4.2a2.093,2.093,0,0,0,2.1,2.1h14.7a2.093,2.093,0,0,0,2.1-2.1V17.1H15.6v1.05ZM21.9,8.7H17.69V6.6l-2.1-2.1h-4.2L9.29,6.6V8.7H5.1A2.106,2.106,0,0,0,3,10.8v3.15a2.093,2.093,0,0,0,2.1,2.1h6.3v-2.1h4.2v2.1h6.3a2.106,2.106,0,0,0,2.1-2.1V10.8A2.106,2.106,0,0,0,21.9,8.7Zm-6.3,0H11.4V6.6h4.2Z" transform="translate(-3 -4.5)"/>
+                            </svg>
+                            <span class="side-bar-text d-none d-md-inline">Profile Resto</span>
+                        </a>
+                    </li>
+                    </ul>
+                    <hr>
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center link-dark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+                                <path id="Icon_material-help" data-name="Icon material-help" d="M13.5,3A10.5,10.5,0,1,0,24,13.5,10.5,10.5,0,0,0,13.5,3Zm1.05,17.85h-2.1v-2.1h2.1Zm2.174-8.137-.945.966A3.574,3.574,0,0,0,14.55,16.65h-2.1v-.525a4.226,4.226,0,0,1,1.228-2.971l1.3-1.323a2.053,2.053,0,0,0,.62-1.48,2.1,2.1,0,1,0-4.2,0H9.3a4.2,4.2,0,1,1,8.4,0A3.341,3.341,0,0,1,16.723,12.712Z" transform="translate(-3 -3)"/>
+                            </svg>
+                            <span class="sidebar-bottom-text d-none d-md-inline"><u>Hubungi Developer?</u></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="float-left content-wrapper">
+                <nav class="navbar navbar-expand navbar-custom" aria-label="Second navbar example">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarsExample02">
+                            <ul class="navbar-nav me-auto">
+
+                            </ul>
+                            <div class="d-inline-flex">
+                                <span class="text-profile">Yanti</span>
+                                <img src="https://via.placeholder.com/150.png" width="40" class="rounded-circle" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- content -->
+                <div class="container-fluid">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-3">
+                        <h4 class="h3 mb-0 heading-text">Data Menu</h4>
+                        <p class="d-none d-sm-inline-block sub-heading-text">Resto ID - 325DR12132</p>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-3 col-12">
+                            <div class="card shadow mb-4">
+                                <div class="card-body card-body-summary">
+                                    <div class="d-flex bd-highlight">
+                                        <div class="w-100 bd-highlight">
+                                            <h5 class="card-custom-title">Kategori</h5>
+                                        </div>
+                                        <div class="flex-shrink-1 bd-highlight" style="padding-right: 1rem;">
+                                            <button class="btn-transparent" type="button" onclick="showModal('create-kategori-modal')">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25.625" height="25.625" viewBox="0 0 35.625 35.625">
+                                                    <path id="Icon_ionic-ios-add-circle" data-name="Icon ionic-ios-add-circle" d="M21.188,3.375A17.813,17.813,0,1,0,39,21.188,17.81,17.81,0,0,0,21.188,3.375Zm7.75,19.183h-6.38v6.38a1.37,1.37,0,0,1-2.74,0v-6.38h-6.38a1.37,1.37,0,0,1,0-2.74h6.38v-6.38a1.37,1.37,0,0,1,2.74,0v6.38h6.38a1.37,1.37,0,0,1,0,2.74Z" transform="translate(-3.375 -3.375)" fill="#ff5722"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="w-100">
+                                        <hr class="line-orange">
+                                    </div>
+                                    <div class="card-custom-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <div class="d-flex bd-highlight">
+                                                    <div class="flex-grow-1 bd-highlight">
+                                                        <p class="card-list-item mt-2">Favorite</p>
+                                                    </div>
+                                                    <div class="bd-highlight">
+                                                        <p class="number-circle">2</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="d-flex bd-highlight">
+                                                    <div class="flex-grow-1 bd-highlight">
+                                                        <p class="card-list-item mt-2">Makanan</p>
+                                                    </div>
+                                                    <div class="bd-highlight">
+                                                        <p class="number-circle">15</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="d-flex bd-highlight">
+                                                    <div class="flex-grow-1 bd-highlight">
+                                                        <p class="card-list-item mt-2">Minuman</p>
+                                                    </div>
+                                                    <div class="bd-highlight">
+                                                        <p class="number-circle">10</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="d-flex bd-highlight">
+                                                    <div class="flex-grow-1 bd-highlight">
+                                                        <p class="card-list-item mt-2">Snack</p>
+                                                    </div>
+                                                    <div class="bd-highlight">
+                                                        <p class="number-circle">5</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-12">
+                            <div class="card shadow mb-4">
+                                <div class="card-body card-body-summary">
+                                    <div class="d-flex bd-highlight">
+                                        <div class="bd-highlight">
+                                            <h5 class="card-custom-title">Daftar menu</h5>
+                                        </div>
+                                        <div class="flex-grow-1 bd-highlight">
+                                            <input type="text" class="input-search">
+                                        </div>
+                                        <div class="bd-highlight">
+                                            <button class="btn-transparent" type="button" onclick="showModal('create-menu-modal')">
+                                                <svg style="margin-right: 20px;" xmlns="http://www.w3.org/2000/svg" width="25.625" height="25.625" viewBox="0 0 35.625 35.625">
+                                                    <path id="Icon_ionic-ios-add-circle" data-name="Icon ionic-ios-add-circle" d="M21.188,3.375A17.813,17.813,0,1,0,39,21.188,17.81,17.81,0,0,0,21.188,3.375Zm7.75,19.183h-6.38v6.38a1.37,1.37,0,0,1-2.74,0v-6.38h-6.38a1.37,1.37,0,0,1,0-2.74h6.38v-6.38a1.37,1.37,0,0,1,2.74,0v6.38h6.38a1.37,1.37,0,0,1,0,2.74Z" transform="translate(-3.375 -3.375)" fill="#ff5722"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                      </div>
+                                    <div class="w-100" style="margin-top: -2px;">
+                                        <hr class="line-orange">
+                                    </div>
+                                    <div class="card-custom-body">
+                                        <table class="table-striped-custom table-hover">
+                                            <tr>
+                                                <td style="width: auto;">
+                                                    <span class="td-food">Ayam Rica-Rica</span>
+                                                </td>
+                                                <td>
+                                                    <div class="d-inline">
+                                                        <span class="td-category">Makanan</span>
+                                                        <span>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="23.947" height="22.75" viewBox="0 0 23.947 22.75">
+                                                                <path id="Icon_material-star" data-name="Icon material-star" d="M14.974,21.284l7.4,4.466L20.41,17.332l6.538-5.664-8.609-.73L14.974,3l-3.365,7.939L3,11.669l6.538,5.664L7.574,25.75Z" transform="translate(-3 -3)" fill="#ff5722"/>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                                <td class="td-price">
+                                                    Rp. 40.000,-
+                                                </td>
+                                                <td class="text-center">
+                                                    <button class="btn-transparent" type="button" onclick="showModal('edit-menu-modal')">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20.817" height="18.5" viewBox="0 0 20.817 18.5">
+                                                            <path id="Icon_awesome-edit" data-name="Icon awesome-edit" d="M14.55,3.01l3.26,3.26a.353.353,0,0,1,0,.5L9.917,14.662l-3.354.372a.7.7,0,0,1-.777-.777L6.158,10.9,14.051,3.01A.353.353,0,0,1,14.55,3.01ZM20.4,2.183,18.641.419a1.413,1.413,0,0,0-1.995,0L15.367,1.7a.353.353,0,0,0,0,.5l3.26,3.26a.353.353,0,0,0,.5,0L20.4,4.178a1.413,1.413,0,0,0,0-1.995ZM13.878,12.515v3.679H2.313V4.629h8.3a.444.444,0,0,0,.307-.126l1.446-1.446a.434.434,0,0,0-.307-.741H1.735A1.735,1.735,0,0,0,0,4.051V16.772a1.735,1.735,0,0,0,1.735,1.735H14.456a1.735,1.735,0,0,0,1.735-1.735v-5.7a.434.434,0,0,0-.741-.307L14,12.208A.444.444,0,0,0,13.878,12.515Z" transform="translate(0 -0.007)" fill="#878787"/>
+                                                        </svg>
+                                                    </button>
+                                                    <button class="btn-transparent" type="button">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="15.556" height="20" viewBox="0 0 15.556 20">
+                                                            <path id="Icon_material-delete-forever" data-name="Icon material-delete-forever" d="M8.611,22.278A2.229,2.229,0,0,0,10.833,24.5h8.889a2.229,2.229,0,0,0,2.222-2.222V8.944H8.611Zm2.733-7.911L12.911,12.8l2.367,2.356L17.633,12.8,19.2,14.367l-2.356,2.356L19.2,19.078l-1.567,1.567-2.356-2.356-2.356,2.356-1.567-1.567,2.356-2.356Zm7.822-8.756L18.056,4.5H12.5L11.389,5.611H7.5V7.833H23.056V5.611Z" transform="translate(-7.5 -4.5)" fill="#a2a2a2"/>
+                                                        </svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="td-food">Teh Botol</span>
+                                                </td>
+                                                <td>
+                                                    <div class="d-inline">
+                                                        <span class="td-category">Minuman</span>
+                                                    </div>
+                                                </td>
+                                                <td class="td-price">
+                                                    Rp. 10.000,-
+                                                </td>
+                                                <td class="text-center">
+                                                    <button class="btn-transparent" type="button" onclick="showModal('edit-menu-modal')">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20.817" height="18.5" viewBox="0 0 20.817 18.5">
+                                                            <path id="Icon_awesome-edit" data-name="Icon awesome-edit" d="M14.55,3.01l3.26,3.26a.353.353,0,0,1,0,.5L9.917,14.662l-3.354.372a.7.7,0,0,1-.777-.777L6.158,10.9,14.051,3.01A.353.353,0,0,1,14.55,3.01ZM20.4,2.183,18.641.419a1.413,1.413,0,0,0-1.995,0L15.367,1.7a.353.353,0,0,0,0,.5l3.26,3.26a.353.353,0,0,0,.5,0L20.4,4.178a1.413,1.413,0,0,0,0-1.995ZM13.878,12.515v3.679H2.313V4.629h8.3a.444.444,0,0,0,.307-.126l1.446-1.446a.434.434,0,0,0-.307-.741H1.735A1.735,1.735,0,0,0,0,4.051V16.772a1.735,1.735,0,0,0,1.735,1.735H14.456a1.735,1.735,0,0,0,1.735-1.735v-5.7a.434.434,0,0,0-.741-.307L14,12.208A.444.444,0,0,0,13.878,12.515Z" transform="translate(0 -0.007)" fill="#878787"/>
+                                                        </svg>
+                                                    </button>
+                                                    <button class="btn-transparent" type="button">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="15.556" height="20" viewBox="0 0 15.556 20">
+                                                            <path id="Icon_material-delete-forever" data-name="Icon material-delete-forever" d="M8.611,22.278A2.229,2.229,0,0,0,10.833,24.5h8.889a2.229,2.229,0,0,0,2.222-2.222V8.944H8.611Zm2.733-7.911L12.911,12.8l2.367,2.356L17.633,12.8,19.2,14.367l-2.356,2.356L19.2,19.078l-1.567,1.567-2.356-2.356-2.356,2.356-1.567-1.567,2.356-2.356Zm7.822-8.756L18.056,4.5H12.5L11.389,5.611H7.5V7.833H23.056V5.611Z" transform="translate(-7.5 -4.5)" fill="#a2a2a2"/>
+                                                        </svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="create-kategori-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="">Tambahkan Kategori</h5>
+                        <button type="button" class="btn-transparent" data-bs-dismiss="modal" aria-label="Close">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                                <g id="Icon_ionic-ios-close-circle-outline" data-name="Icon ionic-ios-close-circle-outline" transform="translate(-3.375 -3.375)">
+                                  <path id="Path_14" data-name="Path 14" d="M23.295,21.705,19.589,18l3.705-3.705a1.124,1.124,0,0,0-1.589-1.589L18,16.411l-3.705-3.705a1.124,1.124,0,0,0-1.589,1.589L16.411,18l-3.705,3.705a1.086,1.086,0,0,0,0,1.589,1.116,1.116,0,0,0,1.589,0L18,19.589l3.705,3.705a1.129,1.129,0,0,0,1.589,0A1.116,1.116,0,0,0,23.295,21.705Z"/>
+                                  <path id="Path_15" data-name="Path 15" d="M18,5.344A12.651,12.651,0,1,1,9.049,9.049,12.573,12.573,0,0,1,18,5.344m0-1.969A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z"/>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="form-group mb-3">
+                                <label for="">Nama Kategori</label>
+                                <input type="text" class="form-control-round">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex bd-highlight">
+                            <div class="p-2 w-100 bd-highlight">
+                                <button type="button" class="btn-hide-modal" data-bs-dismiss="modal">Batal</button>
+                            </div>
+                            <div class="p-2 flex-shrink-1 bd-highlight">
+                                <button type="button" class="btn-green-round">Simpan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="create-menu-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="">Tambahkan Menu</h5>
+                        <button type="button" class="btn-transparent" data-bs-dismiss="modal" aria-label="Close">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                                <g id="Icon_ionic-ios-close-circle-outline" data-name="Icon ionic-ios-close-circle-outline" transform="translate(-3.375 -3.375)">
+                                  <path id="Path_14" data-name="Path 14" d="M23.295,21.705,19.589,18l3.705-3.705a1.124,1.124,0,0,0-1.589-1.589L18,16.411l-3.705-3.705a1.124,1.124,0,0,0-1.589,1.589L16.411,18l-3.705,3.705a1.086,1.086,0,0,0,0,1.589,1.116,1.116,0,0,0,1.589,0L18,19.589l3.705,3.705a1.129,1.129,0,0,0,1.589,0A1.116,1.116,0,0,0,23.295,21.705Z"/>
+                                  <path id="Path_15" data-name="Path 15" d="M18,5.344A12.651,12.651,0,1,1,9.049,9.049,12.573,12.573,0,0,1,18,5.344m0-1.969A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z"/>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="form-group mb-3">
+                                <label for="">Kategori</label>
+                                <select name="" class="form-control-round" id="">
+                                    <option value="">Kategori 1</option>
+                                    <option value="">Kategori 2</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="">Nama Menu</label>
+                                <input type="text" class="form-control-round">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="container-label"> Jadikan Favorite
+                                    <input type="checkbox" checked="checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="">Deskripsi Singkat</label>
+                                <textarea name="" id="" cols="30" rows="5" class="form-control-round"></textarea>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="">Foto Menu (Maks. 2 Mb)</label> <br>
+                                <label for="input-file" class="form-input-file">
+                                    Select File
+                                    <input type="file" id="input-file" class="form-file">
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex bd-highlight">
+                            <div class="p-2 w-100 bd-highlight">
+                                <button type="button" class="btn-hide-modal" data-bs-dismiss="modal">Batal</button>
+                            </div>
+                            <div class="p-2 flex-shrink-1 bd-highlight">
+                                <button type="button" class="btn-green-round">Simpan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="edit-menu-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="">Edit Menu</h5>
+                        <button type="button" class="btn-transparent" data-bs-dismiss="modal" aria-label="Close">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                                <g id="Icon_ionic-ios-close-circle-outline" data-name="Icon ionic-ios-close-circle-outline" transform="translate(-3.375 -3.375)">
+                                  <path id="Path_14" data-name="Path 14" d="M23.295,21.705,19.589,18l3.705-3.705a1.124,1.124,0,0,0-1.589-1.589L18,16.411l-3.705-3.705a1.124,1.124,0,0,0-1.589,1.589L16.411,18l-3.705,3.705a1.086,1.086,0,0,0,0,1.589,1.116,1.116,0,0,0,1.589,0L18,19.589l3.705,3.705a1.129,1.129,0,0,0,1.589,0A1.116,1.116,0,0,0,23.295,21.705Z"/>
+                                  <path id="Path_15" data-name="Path 15" d="M18,5.344A12.651,12.651,0,1,1,9.049,9.049,12.573,12.573,0,0,1,18,5.344m0-1.969A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z"/>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-md-7 col-12">
+                                    <div class="form-group mb-3">
+                                        <label for="">Kategori</label>
+                                        <select name="" class="form-control-round" id="">
+                                            <option value="">Kategori 1</option>
+                                            <option value="">Kategori 2</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="">Nama Menu</label>
+                                        <input type="text" class="form-control-round">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label class="container-label"> Jadikan Favorite
+                                            <input type="checkbox" checked="checked">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="">Deskripsi Singkat</label>
+                                        <textarea name="" id="" cols="30" rows="5" class="form-control-round"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <div class="container-img-menu">
+                                        <label for="">img_menu_rica</label>
+                                        <img src="https://via.placeholder.com/150.png" class="preview-menu" alt="">
+                                        <div class="d-flex justify-content-end">
+                                            <label for="input-file-update" class="form-input-file-update">
+                                                Ubah
+                                                <input type="file" id="input-file-update" class="form-file">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex bd-highlight">
+                            <div class="p-2 w-100 bd-highlight">
+                                <button type="button" class="btn-hide-modal" data-bs-dismiss="modal">Batal</button>
+                            </div>
+                            <div class="p-2 flex-shrink-1 bd-highlight">
+                                <button type="button" class="btn-green-round">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../../assets/bootstrap/js/bootstrap.bundle.min.js" ></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script>
+
+            function showModal(modal) {
+                $('#' + modal).modal('show');
+            }
+        </script>
     </body>
 </html>
