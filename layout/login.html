@@ -1,11 +1,124 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
         <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../../assets/css/main.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="../assets/css/custom-skin.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        
     </head>
     <body>
+        <!-- navigation bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-default">
+            <div class="container-fluid mx-5 py-2">
+                <a class="navbar-brand" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55" height="54" viewBox="0 0 55 54">
+                        <defs>
+                            <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 215 212">
+                            <image width="215" height="212" xlink:href="data:image/png;base64,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"/>
+                            </pattern>
+                        </defs>
+                        <rect id="Component_6_1" data-name="Component 6 – 1" width="55" height="54" fill="url(#pattern)"/>
+                        </svg>    
+                </a>
+                <a id="navbar-title" class="navbar-brand" href="#">BUKU MENU QR</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                </ul>
+                <div class="d-flex navbar-nav">
+                    <div class="nav-item">
+                        <a class="nav-link" href="../layout/index.html">Kembali</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
         
+        <!-- login center -->
+        <div id="center-content">
+            <div class="row">
+                <div class="col-3">
+                    <div class="d-flex flex-column logo-login">
+                        <div class="d-flex pb-3">
+                            <svg id="Component_6_1" data-name="Component 6 – 1" xmlns="http://www.w3.org/2000/svg" width="215" height="212" viewBox="0 0 215 212">
+                                <path id="Rectangle_69" data-name="Rectangle 69" d="M35,0H200a3,3,0,0,1,3,3V200a3,3,0,0,1-3,3H3a3,3,0,0,1-3-3V35A35,35,0,0,1,35,0Z" transform="translate(12 9)" fill="#c6c6c6"/>
+                                <path id="Rectangle_49" data-name="Rectangle 49" d="M35,0H200a3,3,0,0,1,3,3V200a3,3,0,0,1-3,3H3a3,3,0,0,1-3-3V35A35,35,0,0,1,35,0Z" fill="#ff5722"/>
+                                <path id="Icon_awesome-qrcode" data-name="Icon awesome-qrcode" d="M0,53.091H50.841V2.25H0ZM16.947,19.2H33.894V36.144H16.947ZM67.788,2.25V53.091h50.841V2.25Zm33.894,33.894H84.735V19.2h16.947ZM0,120.879H50.841V70.038H0ZM16.947,86.985H33.894v16.947H16.947Zm93.209-16.947h8.474v33.894H93.209V95.459H84.735v25.421H67.788V70.038H93.209v8.474h16.947Zm0,42.368h8.474v8.474h-8.474Zm-16.947,0h8.474v8.474H93.209Z" transform="translate(44.062 40.217)" fill="#fff"/>
+                              </svg>                              
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="qr-title py-2">
+                                <h4>BUKU MENU QR</h4>
+                            </div>
+                            <div class="pb-3">
+                                <p>Cetak QR menu anda dengan lebih baik dan lebh modern.</p>
+                            </div>
+                            <div class="pb-2">
+                                <div id="promo-banner" class="promo-text">
+                                    <h4 class="center">1000% GRATIS!</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="qr-box">
+                        <div class="d-flex flex-column">
+                            <div class="qr-title pt-3 px-4">
+                                <h4>Login</h4>
+                            </div>
+                            <hr style="background-color: rgba(0,0,0,0.5);">
+                            <form class="pb-3 px-4">
+                                <div class="form-group mb-4">
+                                    <label for="inputEmail" class="mb-2">Email</label>
+                                    <input type="email" class="form-control border-10" name="email" id="inputBoxEmail">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword" class="mb-2">password</label>
+                                    <input type="password" class="form-control border-10" name="email" id="inputBoxPassword">
+                                </div>
+                            </form>
+                            <div class="captcha px-4">
+                                <img src="../assets/image/captcha.jpg" alt="" style="height:80px;width: auto;float: right;">
+                            </div>
+                            <div class="px-4">
+                                <hr>
+                            </div>
+                            <div class="d-flex px-4 mb-3">
+                                <div class="flex-grow-1">
+                                    <a href="#" style="font-weight: bold;">Belum ada akun</a>
+                                </div>
+                                <div>
+                                    <a href="#" style="font-weight: bold;">Lupa password</a>
+                                </div>
+                            </div>
+                            <div class="px-4 d-flex">
+                                <div id="gmail-icon">
+                                    <img src="../assets/image/gmail.svg" alt="">
+                                </div>
+                                <div class="align-self-center" style="margin-bottom: unset;margin-left: .5rem;">
+                                    <a href="#" style="margin-bottom: unset;font-weight: bold;">Login dengan Gmail</a>
+                                </div>
+                            </div>
+                            <hr style="background-color: rgba(0,0,0,0.5);">
+                            <div class="button-login mb-3 px-4">
+                                <button type="button" class="btn btn-primary">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="../assets/bootstrap/js/bootstrap.min.js" ></script>
     </body>
 </html>
