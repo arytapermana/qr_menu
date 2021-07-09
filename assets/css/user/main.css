@@ -232,7 +232,7 @@ a.card-favorite-link {
 .btn-nav-bar:active {
     background-color: #6C6C6C;
 }
-.modal-content {
+#modal-detail-menu > div > .modal-content {
     width: 90%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -279,4 +279,84 @@ a.card-favorite-link {
 }
 .order-row-content {
     padding: 20px 50px 0 50px;
+}
+.profile-img {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    left: calc(50% - 75px);
+    top: calc(100% + 30px);
+}
+.form-profile {
+    margin: 80px 20px;
+}
+.form-control-round {
+    width: 100%;
+    padding: 8px 20px;
+    margin-top: 10px;
+    border: 1px solid #C0C0C0;
+    border-radius: 20px;
+    background-color: #FFF;
+    resize: vertical;
+}
+.form-control-round:focus {
+    outline: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border: 1px solid #555;
+}
+.btn-logout {
+    margin-top: 40px;
+    width: 100%;
+    border: none;
+    padding: 10px 0px;
+    border-radius: 30px;
+    background-color: #FF5722;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+}
+.btn-logout:hover {
+    background-color: #707070;
+}
+.btn-logout:active {
+    background-color: #707070;
+}
+.form-change-profile {
+    background-color: #FFF;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    right: calc(50% - 75px);
+    top: calc(100% + 120px);
+}
+.form-change-profile:active {
+    background-color: #FF5722;
+}
+.form-change-profile svg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 13px;
+}
+.title-card-list {
+    font-size: 14px;
+    color: #707070;
+    font-weight: 700;
+}
+.list-group-item > a {
+    text-decoration: none;
+    color: #1F1F1F;
+}
+.article-content {
+    padding: 20px 20px;
+}
+.article-title {
+    font-size: 24px;
+    color: #FFF;
+    position: absolute;
+    top: calc(100% + 50px);
 }

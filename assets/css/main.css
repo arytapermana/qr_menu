@@ -181,6 +181,7 @@ li.nav-item > a.active > svg {
     color: #505050;
     font-size: 15px;
     font-weight: 600;
+    text-decoration: none;
 }
 .card-list-price {
     color: #505050;
@@ -654,4 +655,127 @@ li.nav-item > a.active > svg {
     width: 100%;
     margin-right: 40px;
     margin-top: 10px;
+}
+
+/* modal qr */
+#qr-code > div > div.modal-content {
+    border-radius: 0% !important;
+}
+.first-modal {
+    background-color: #FF5722 !important;
+}
+#qr-code > div > div > div > div.col-md-6.first-modal > div.modal-header > h5 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #FFF;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.img-qr-code {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 10px;
+}
+.link-scan {
+    margin-top: 20px;
+    text-align: center;
+    color: #FFF;
+    text-decoration: underline;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.profile-resto {
+    margin-right: 20px;
+    display: inline;
+    margin-left: 20px;
+}
+.profile-resto img {
+    margin-top: 10px;
+    border-radius: 50%;
+    width: 80px;
+}
+#profile-box {
+    margin-top: 20px;
+    margin-left: 15px;
+}
+#profile-box .name {
+    font-size: 18px;
+    color: #FFF;
+    margin-bottom: 0;
+}
+#profile-box .address {
+    font-size: 12px;
+    color: #FFF;
+    margin-bottom: 0;
+}
+.footer-first-modal {
+    margin-bottom: -10px;
+    margin-top: 30px;
+}
+.footer-first-modal p {
+    color: #FFF;
+    font-size: 13px;
+    padding: 0px 0px;
+}
+.second-modal {
+    background-color: #e7e5e5 !important;
+}
+.second-modal > .modal-header {
+    border-bottom: #b9b7b7 solid 1px !important;
+}
+.resto-id {
+    font-size: 18px;
+    font-weight: 400;
+}
+.resto-id-number {
+    color: #FF5722;
+    font-size: 20px;
+    font-weight: 700;
+}
+.btn-copy-link {
+    width: 100%;
+    display: inline;
+    color: #6C6C6C;
+    background-color: #FFF;
+    font-size: 12px;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+}
+.btn-copy-link:hover {
+    color: #FFF;
+    background-color: #FF5722;
+    border: none;
+}
+.btn-copy-link:active {
+    background-color: #6C6C6C;
+    border: none;
+}
+.share-sosmed {
+    color: #363636;
+    vertical-align: middle;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: underline;
+}
+.btn-icon-print {
+    border: none;
+    background-color: #FFF;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+}
+.btn-icon-print:hover {
+    color: #FFF;
+    background-color: #FF5722;
+    border: none;
+}
+.btn-icon-print:active {
+    background-color: #6C6C6C;
+    border: none;
+}
+.footer-second-modal {
+    font-size: 10px;
 }
